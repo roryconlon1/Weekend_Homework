@@ -39,14 +39,22 @@ def find_pet_by_name(shop, name):
         if pet["name"] == name:
             return pet
 
-def remove_pet_by_name(shop, name):
-    no_pet =[]
-    for pet in shop["pets"]:
-        if pet["name"] == name:
-            no_pet.remove(pet)
+# def remove_pet_by_name(shop, name):
+#     for pet in shop["pets"]:
+#         if pet["name"] == name:
+#             del shop[pet]
 
+def get_customer_cash(cash):
+    return cash["cash"]
          
+def remove_customer_cash(customer, money):
+    customer["cash"] = customer["cash"] - money
+    return customer["cash"]      
        
             
-
-        
+def get_customer_pet_count(customer):
+    return len(customer["pets"])/4  #not sure if this is right, but divided by 4 for amount of info given per animal in dictionary
+ 
+def add_pet_to_customer(customer, new_pet):
+    customer["pets"] = new_pet
+    
